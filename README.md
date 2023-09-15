@@ -37,27 +37,27 @@ import sqlite3
 
 Next, we load our datasets
 
-```python
+
 
 df1 = pd.read_csv('bom.movie_gross.csv.gz')
 df1.head()
 
-```python
+
 df2 = pd.read_csv('tmdb.movies.csv.gz')
 df2.head()
 
-```python
+```
 
 df3 = pd.read_csv('tn.movie_budgets.csv.gz')
 df3.head()
 
-```python 
+
 
 query = "SELECT * FROM movie_basics"
 df4 = pd.read_sql_query(query, conn)
 df4.head() 
 
-```python
+
 
 query = "SELECT * FROM movie_ratings"
 df5 = pd.read_sql_query(query, conn)
@@ -67,7 +67,7 @@ df5.head()
 After loading our dataset we try and merge the data frames in order to get a single dataset
 
 
-```python
+
 
 import pandas as pd
 # Combine the dataframes using pd.concat() based on movie_id
@@ -84,14 +84,14 @@ movies_reviews_df.head()
 Now we have our data set but before we start our analysis we must first clean our data in order to get the right analysis. 
 
 
- ##  Univariate Analysis
+ ## Univariate Analysis
  
  It gives us the characteristics and behaviour of a single variable
 
 we will start by plotting histograms to visualize and compare how different variables work  in the dataframe movies_review_df  i.e variables that contain floats and integers
 
 
-```python 
+
 
 # plotting histograms to visualize patterns in the data
 import matplotlib.pyplot as plt
@@ -110,7 +110,7 @@ The histogram for average ratings shows a distribution that is slightly left-ske
 
 The next univariate analysis will be on movie release year trends. A line graph will be plotted in order to visualise the trend in movie years
 
-```python 
+ 
 
 #run this cell
 # Explore movie release year trends
@@ -134,7 +134,7 @@ In the line chart above we can see there is a steady decrease in movie release s
 
 We are also going to explore the popularity of genres in this univariate analysis by plotting a graph which will enables us visualize and know which genres are prefered.
 
-```python
+
 
 #run this cell
 # Explore the popularity of movie genres
@@ -166,7 +166,7 @@ shows relationship between two variables
 
  we look and analyze movie performance by studio based on total domestic gross earnings by plotting a bar chart.
 
- ```python
+ 
  #run cell without changes
  # Analyze movie performance by studio based on total domestic gross earnings
 import matplotlib.pyplot as plt
@@ -195,7 +195,7 @@ By analyzing the bar chart of movie performance by studio, we can identify which
  It involves examining relationships between multiple variables in a dataset simultaneously.In the dataset 'movies_review_df' we can perform multivariate analysis to explore how multiple variables, such as 'averagerating,' 'numvotes,' and 'runtime_minutes,' are related. One way to visualize this is by creating a heatmap of the correlations between these variables
 
 
-  ```python
+ 
 
   # Analyze correlations between variables and create a heatmap
 import seaborn as sns
