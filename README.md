@@ -17,8 +17,10 @@ In this analysis, we are going to look at movie data that have been provided fro
 
 ## Data Understanding and analysis
 
-
 The data sources for this analysis was pulled from various files which include:
+
+![image](https://github.com/IanKedeyie/movie_reviews-project/assets/142450582/a10247d3-1653-47f7-8a70-3b5ab06b38e4)
+
 
 #### ['im.db'](https://www.imdb.com/)
 #### ['bom.movie_gross.csv.gz'](https://www.boxofficemojo.com/)
