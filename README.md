@@ -46,7 +46,7 @@ df1.head()
 df2 = pd.read_csv('tmdb.movies.csv.gz')
 df2.head()
 
-```
+
 
 df3 = pd.read_csv('tn.movie_budgets.csv.gz')
 df3.head()
@@ -62,7 +62,7 @@ df4.head()
 query = "SELECT * FROM movie_ratings"
 df5 = pd.read_sql_query(query, conn)
 df5.head()
-
+```
 
 After loading our dataset we try and merge the data frames in order to get a single dataset
 
