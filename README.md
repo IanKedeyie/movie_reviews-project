@@ -70,13 +70,16 @@ After loading our dataset we try and merge the data frames in order to get a sin
 
 
 import pandas as pd
-# Combine the dataframes using pd.concat() based on movie_id
+
+Combine the dataframes using pd.concat() based on movie_id
 combined_df = pd.concat([df4, df5, df1], axis=1, join='inner')
 
- #To remove duplicate columns (movie_id in this case) from the merged dataframe
+To remove duplicate columns (movie_id in this case) from the merged dataframe
+ 
 combined_df2 = combined_df.loc[:, ~combined_df.columns.duplicated()]
 
-# Display the first few rows of the combined dataframe
+ Display the first few rows of the combined dataframe
+ 
 movies_reviews_df = combined_df2
 movies_reviews_df.head()
 
@@ -93,7 +96,7 @@ we will start by plotting histograms to visualize and compare how different vari
 
 
 
-# plotting histograms to visualize patterns in the data
+plotting histograms to visualize patterns in the data
 import matplotlib.pyplot as plt
 df20.hist(figsize = (20,10), bins= 24)
 plt.show()
@@ -112,11 +115,14 @@ The next univariate analysis will be on movie release year trends. A line graph 
 
  
 
-#run this cell
-# Explore movie release year trends
+
+ Explore movie release year trends
+ 
 year_trends = movies_reviews_df['start_year'].value_counts().sort_index()
 year_trends
-# Plotting year_trends as a line chart
+
+
+ Plotting year_trends as a line chart
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(12, 6))
@@ -136,15 +142,16 @@ We are also going to explore the popularity of genres in this univariate analysi
 
 
 
-#run this cell
-# Explore the popularity of movie genres
+
+
+ #Explore the popularity of movie genres
 import matplotlib.pyplot as plt
 
-# Split and explode genres, then count the frequency of each genre
+      #Split and explode genres, then count the frequency of each genre
 genres = movies_reviews_df['genres'].str.split(',').explode().str.strip()
 popular_genres = genres.value_counts()
 
-# Plot the popular genres as a bar chart
+     #Plot the popular genres as a bar chart
 plt.figure(figsize=(12, 6))
 popular_genres.plot(kind='bar', color='skyblue')
 plt.title('Popularity of Movie Genres')
@@ -152,7 +159,8 @@ plt.xlabel('Genre')
 plt.ylabel('Number of Movies')
 plt.xticks(rotation=45)
 plt.grid(axis='y')
-plt.show()
+plt.show()     
+
 
 
 
@@ -167,15 +175,15 @@ shows relationship between two variables
  we look and analyze movie performance by studio based on total domestic gross earnings by plotting a bar chart.
 
  
- #run cell without changes
- # Analyze movie performance by studio based on total domestic gross earnings
+ 
+     Analyze movie performance by studio based on total domestic gross earnings
 import matplotlib.pyplot as plt
 
 # Group data by studio, sum the domestic gross earnings, and sort in descending order
 studio_performance = movies_reviews_df.groupby('studio')['domestic_gross'].sum().sort_values(ascending=False)
 studio_performance
 
-# Plot the studio performance as a bar chart
+     # Plot the studio performance as a bar chart
 plt.figure(figsize=(12, 6))
 studio_performance.plot(kind='bar', color='skyblue')
 plt.title('Movie Performance by Studio (Total Domestic Gross Earnings)')
@@ -197,14 +205,14 @@ By analyzing the bar chart of movie performance by studio, we can identify which
 
  
 
-  # Analyze correlations between variables and create a heatmap
+     # Analyze correlations between variables and create a heatmap
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Compute the correlation matrix
+    # Compute the correlation matrix
 correlation_matrix = movies_reviews_df.corr()
 
-# Create a heatmap using seaborn
+    # Create a heatmap using seaborn
 plt.figure(figsize=(10, 8))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=0.5)
 plt.title('Correlation Heatmap')
