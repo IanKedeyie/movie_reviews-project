@@ -67,7 +67,7 @@ df5.head()
 After loading our dataset we try and merge the data frames in order to get a single dataset
 
 
-
+```python
 
 import pandas as pd
 
@@ -82,7 +82,7 @@ combined_df2 = combined_df.loc[:, ~combined_df.columns.duplicated()]
  
 movies_reviews_df = combined_df2
 movies_reviews_df.head()
-
+```
 
 Now we have our data set but before we start our analysis we must first clean our data in order to get the right analysis. 
 
@@ -93,12 +93,13 @@ Now we have our data set but before we start our analysis we must first clean ou
 
 we will start by plotting histograms to visualize and compare how different variables work  in the dataframe movies_review_df  i.e variables that contain floats and integers
 
+   ```python
 
     #plotting histograms to visualize patterns in the data
 import matplotlib.pyplot as plt
 df20.hist(figsize = (20,10), bins= 24)
 plt.show()
-
+```
 
 ## Conclusions from our 1 st univariate analysis 
 
@@ -113,14 +114,14 @@ The next univariate analysis will be on movie release year trends. A line graph 
 
  
 
-
+```python
  Explore movie release year trends
  
 year_trends = movies_reviews_df['start_year'].value_counts().sort_index()
 year_trends
 
 
- Plotting year_trends as a line chart
+ #Plotting year_trends as a line chart
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(12, 6))
@@ -131,7 +132,7 @@ plt.ylabel('Number of Movies Released')
 plt.grid(True)
 plt.show()
 
-
+```
 
 In the line chart above we can see there is a steady decrease in movie release since 2010 to 2016 but after 2016 there have been an increase in movie releases. 2019 had the highest number of movies released ever according to the analysis. We can identify specific years with spikes or drops in movie releases, which may be due to factors such as major industry events, economic conditions, or cultural trends. We can analyze the general pattern of movie releases, such as whether there are cyclical patterns or a continuous upward trend. Based on these observations, we can draw conclusions about the historical trends in movie releases and potentially make hypotheses about the underlying factors driving these trends.
 
@@ -141,7 +142,7 @@ We are also going to explore the popularity of genres in this univariate analysi
 
 
 
-
+```python
       #Explore the popularity of movie genres
 import matplotlib.pyplot as plt
 
@@ -159,7 +160,7 @@ plt.xticks(rotation=45)
 plt.grid(axis='y')
 plt.show()     
 
-
+```
 
 
 
@@ -171,7 +172,8 @@ we can conclude that according to our data the most viewed genre is drama the fo
 shows relationship between two variables
 
  we look and analyze movie performance by studio based on total domestic gross earnings by plotting a bar chart.
- 
+
+```python  
      #  Analyze movie performance by studio based on total domestic gross earnings
 import matplotlib.pyplot as plt
 
@@ -189,7 +191,7 @@ plt.xticks(rotation=45)
 plt.grid(axis='y')
 plt.show()
 
-
+```
 
 By analyzing the bar chart of movie performance by studio, we can identify which studios have achieved the highest total domestic gross earnings in my dataset and that is BV studios. This analysis can provide insights into the financial success of studios within the movie industry. We can use this information for various purposes, including studio comparisons, investment decisions, and understanding the competitive landscape of the industry.
  
@@ -199,7 +201,7 @@ By analyzing the bar chart of movie performance by studio, we can identify which
  It involves examining relationships between multiple variables in a dataset simultaneously.In the dataset 'movies_review_df' we can perform multivariate analysis to explore how multiple variables, such as 'averagerating,' 'numvotes,' and 'runtime_minutes,' are related. One way to visualize this is by creating a heatmap of the correlations between these variables
 
 
- 
+ ```python
 
      # Analyze correlations between variables and create a heatmap
 import seaborn as sns
@@ -214,7 +216,7 @@ sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidt
 plt.title('Correlation Heatmap')
 plt.show()
 
-
+```
 
 ### CONCLUSIONS
 
