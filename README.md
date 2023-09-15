@@ -34,10 +34,10 @@ we start by importing the neccesary Libraries
 import pandas as pd
 import numpy as pd
 import sqlite3
-
+```
 Next, we load our datasets
 
-
+```python
 
 df1 = pd.read_csv('bom.movie_gross.csv.gz')
 df1.head()
@@ -68,18 +68,15 @@ After loading our dataset we try and merge the data frames in order to get a sin
 
 
 ```python
-
+    #Combine the dataframes using pd.concat() based on movie_id
 import pandas as pd
 
-Combine the dataframes using pd.concat() based on movie_id
 combined_df = pd.concat([df4, df5, df1], axis=1, join='inner')
 
-To remove duplicate columns (movie_id in this case) from the merged dataframe
- 
+    #To remove duplicate columns (movie_id in this case) from the merged dataframe 
 combined_df2 = combined_df.loc[:, ~combined_df.columns.duplicated()]
 
- Display the first few rows of the combined dataframe
- 
+   # Display the first few rows of the combined dataframe 
 movies_reviews_df = combined_df2
 movies_reviews_df.head()
 ```
