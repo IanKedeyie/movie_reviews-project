@@ -1,4 +1,4 @@
-# Microsft Movie studio insight
+# Microsoft Movie studio insight
 
 ## Introduction
 
@@ -94,9 +94,7 @@ Now we have our data set but before we start our analysis we must first clean ou
 we will start by plotting histograms to visualize and compare how different variables work  in the dataframe movies_review_df  i.e variables that contain floats and integers
 
 
-
-
-plotting histograms to visualize patterns in the data
+    #plotting histograms to visualize patterns in the data
 import matplotlib.pyplot as plt
 df20.hist(figsize = (20,10), bins= 24)
 plt.show()
@@ -144,7 +142,7 @@ We are also going to explore the popularity of genres in this univariate analysi
 
 
 
- #Explore the popularity of movie genres
+      #Explore the popularity of movie genres
 import matplotlib.pyplot as plt
 
       #Split and explode genres, then count the frequency of each genre
@@ -173,13 +171,11 @@ we can conclude that according to our data the most viewed genre is drama the fo
 shows relationship between two variables
 
  we look and analyze movie performance by studio based on total domestic gross earnings by plotting a bar chart.
-
  
- 
-     Analyze movie performance by studio based on total domestic gross earnings
+     #  Analyze movie performance by studio based on total domestic gross earnings
 import matplotlib.pyplot as plt
 
-# Group data by studio, sum the domestic gross earnings, and sort in descending order
+     # Group data by studio, sum the domestic gross earnings, and sort in descending order
 studio_performance = movies_reviews_df.groupby('studio')['domestic_gross'].sum().sort_values(ascending=False)
 studio_performance
 
