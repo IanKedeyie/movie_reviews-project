@@ -98,7 +98,7 @@ df20.hist(figsize = (20,10), bins= 24)
 plt.show()
 ```
 
-## Conclusions from our 1 st univariate analysis 
+### Conclusions from our 1 st univariate analysis 
 
 The histogram for the start year shows that the data is distributed across the years 2010 to 2019. There is a relatively even distribution of movies over this period, with some variation.
 
@@ -165,7 +165,7 @@ we can conclude that according to our data the most viewed genre is drama the fo
 
 
 
-   ### Bivariate analysis
+   ## Bivariate analysis
 shows relationship between two variables
 
  we look and analyze movie performance by studio based on total domestic gross earnings by plotting a bar chart.
@@ -194,7 +194,7 @@ By analyzing the bar chart of movie performance by studio, we can identify which
  
 
 
- ### Multivariate analysis
+ ## Multivariate analysis
  It involves examining relationships between multiple variables in a dataset simultaneously.In the dataset 'movies_review_df' we can perform multivariate analysis to explore how multiple variables, such as 'averagerating,' 'numvotes,' and 'runtime_minutes,' are related. One way to visualize this is by creating a heatmap of the correlations between these variables
 
 
@@ -215,7 +215,7 @@ plt.show()
 
 ```
 
-### CONCLUSIONS
+## CONCLUSIONS
 
 The movie dataset movies_review_df provides valuable insights into movie characteristics, trends, and performance. Key takeaways include the observation of changing movie release trends over the years, the popularity of drama and documentaries among viewers, and the financial success of BV studios. Further analysis and investigation can be conducted to explore the underlying factors driving these trends and correlations, allowing for more informed decision-making within the movie industry. It's important to note that while correlations provide insights into linear relationships, other complex relationships and factors may influence movie performance and trends.
 
